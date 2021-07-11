@@ -1,0 +1,71 @@
+`timescale 1ns/1ps
+`include "cs_constants.v"
+
+module memc_3l_hierarchical_search
+(
+	input								  rst,
+	input				   			  clk,
+	input 	  [`PACKET_LEN-1:0] streaming_y,
+	input		  [`ADDR_WIDTH-1:0] rows,
+	input		  [`ADDR_WIDTH-1:0] columns,
+	
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_top_left,
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_top_middle,
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_top_right,
+	
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_middle_left,
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_middle_right,
+	
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_bottom_left,
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_bottom_middle,
+	input 	  [`DATA_WIDTH-1:0] candidate_level_2_y_bottom_right,
+
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_top_left,
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_top_middle,
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_top_right,
+	
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_middle_left,
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_middle_right,
+	
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_bottom_left,
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_bottom_middle,
+	output reg [`DATA_WIDTH-1:0] candidate_position_level_2_y_bottom_right
+	
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_top_left,
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_top_middle,
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_top_right,
+	
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_middle_left,
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_middle_right,
+	
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_bottom_left,
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_bottom_middle,
+	output reg [`DATA_WIDTH-1:0] candidate_position_request_level_2_y_bottom_right
+);
+
+always@(posedge clk or negedge rst) begin
+	if(~rst) begin
+		candidate_position_level_2_y_top_left 		 			<= 0;
+		candidate_position_level_2_y_top_middle 	 			<= 0;
+		candidate_position_level_2_y_top_right 	 			<= 0;
+		candidate_position_level_2_y_middle_left 	 			<= 0;
+		candidate_position_level_2_y_middle_right  			<= 0;
+		candidate_position_level_2_y_bottom_left 	 			<= 0;
+		candidate_position_level_2_y_bottom_middle 			<= 0;
+		candidate_position_level_2_y_bottom_right  			<= 0;
+		
+		candidate_position_request_level_2_y_top_left 		<= 0;
+		candidate_position_request_level_2_y_top_middle 	<= 0;
+		candidate_position_request_level_2_y_top_right 	 	<= 0;
+		candidate_position_request_level_2_y_middle_left 	<= 0;
+		candidate_position_request_level_2_y_middle_right  <= 0;
+		candidate_position_request_level_2_y_bottom_left 	<= 0;
+		candidate_position_request_level_2_y_bottom_middle <= 0;
+		candidate_position_request_level_2_y_bottom_right  <= 0;
+	end
+	else begin
+		
+	end
+end
+
+endmodule

@@ -1,0 +1,137 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 320 160)
+	(text "memc_3l_hierarchical_search" (rect 5 0 125 12)(font "Arial" ))
+	(text "inst" (rect 8 128 20 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "rst" (rect 0 0 10 12)(font "Arial" ))
+		(text "rst" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 43 31 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rows[7..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "rows[7..0]" (rect 21 59 59 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "columns[7..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "columns[7..0]" (rect 21 75 74 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "streaming_y_in[2047..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "streaming_y_in[2047..0]" (rect 21 91 118 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "candidate_y_in[255..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "candidate_y_in[255..0]" (rect 21 107 110 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 304 32)
+		(output)
+		(text "streaming_y_out[2047..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "streaming_y_out[2047..0]" (rect 180 27 283 39)(font "Arial" ))
+		(line (pt 304 32)(pt 288 32)(line_width 3))
+	)
+	(port
+		(pt 304 48)
+		(output)
+		(text "finish_flag" (rect 0 0 40 12)(font "Arial" ))
+		(text "finish_flag" (rect 243 43 283 55)(font "Arial" ))
+		(line (pt 304 48)(pt 288 48)(line_width 1))
+	)
+	(port
+		(pt 304 64)
+		(output)
+		(text "data[255..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "data[255..0]" (rect 237 59 283 71)(font "Arial" ))
+		(line (pt 304 64)(pt 288 64)(line_width 3))
+	)
+	(port
+		(pt 304 80)
+		(output)
+		(text "addr[15..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "addr[15..0]" (rect 242 75 283 87)(font "Arial" ))
+		(line (pt 304 80)(pt 288 80)(line_width 3))
+	)
+	(port
+		(pt 304 96)
+		(output)
+		(text "we" (rect 0 0 10 12)(font "Arial" ))
+		(text "we" (rect 273 91 283 103)(font "Arial" ))
+		(line (pt 304 96)(pt 288 96)(line_width 1))
+	)
+	(parameter
+		"zero"
+		"000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"one"
+		"001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"two"
+		"010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"three"
+		"011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"four"
+		"100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"five"
+		"101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 288 128)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 320 -64 420 16))
+)

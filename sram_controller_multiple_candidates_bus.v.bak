@@ -1,0 +1,29 @@
+`timescale 1ns/1ps
+`include "cs_constants.v"
+
+module sram_controller_multiple_candidates_bus
+(
+	input 						 	 clk,
+	input  [`PACKET_LEN-1:0] 	 data,
+	input  [`ADDR_WIDTH-1:0] 	 addr,
+	input  [`DATA_WIDTH_16-1:0] candidate_position_request,
+	
+	input 						 	 we,
+	
+	output [`PACKET_LEN-1:0] 	 candidate_value
+);
+// Declare the RAM variable
+reg [`PACKET_LEN-1:0] 	 		 ram [3600-1:0];
+reg [`DATA_WIDTH_16-1:0] 		 candidate_position_request_reg;
+always@(posedge clk)
+begin
+	// Write
+	if (we) begin
+		ram[addr] <= data;
+	end
+	candidate_position_request_reg <= candidate_position_request;
+end 
+
+assign candidate_value = ram[candidate_position_request_reg];
+
+endmodule
